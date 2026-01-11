@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Button from "../ui/button";
 import { FiPlus } from "react-icons/fi";
+import priceFormatter from "@/app/utils/price-formatter";
 
 const productList = [
   {
@@ -11,10 +12,10 @@ const productList = [
     imgUrl: "product-1.png",
   },
   {
-    name: "Running Shirt Pro",
-    category: "Running",
+    name: "Racket Pro",
+    category: "Tennis",
     price: 250000,
-    imgUrl: "product-1.png",
+    imgUrl: "product-2.png",
   },
   {
     name: "Running Shoes",
@@ -23,9 +24,9 @@ const productList = [
     imgUrl: "product-3.png",
   },
   {
-    name: "Football Shoes",
+    name: "SportsOn HyperSoccer v2",
     category: "Football",
-    price: 640000,
+    price: 458000,
     imgUrl: "product-4.png",
   },
   {
@@ -71,11 +72,7 @@ const ProductsSection = () => {
             <div className="flex justify-between mb-8">
               <div className="text-gray-500">{product.category}</div>
               <div className="font-medium text-primary">
-                {Intl.NumberFormat("id-ID", {
-                  style: "currency",
-                  currency: "IDR",
-                  maximumSignificantDigits: 3,
-                }).format(product.price)}
+                {priceFormatter(product.price)}
               </div>
             </div>
           </Link>
