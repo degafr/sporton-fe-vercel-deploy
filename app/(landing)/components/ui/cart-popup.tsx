@@ -2,6 +2,7 @@ import Image from "next/image";
 import Button from "./button";
 import { FiArrowRight, FiTrash2 } from "react-icons/fi";
 import priceFormatter from "@/app/utils/price-formatter";
+import { useRouter } from "next/dist/client/components/navigation";
 
 export const cartList = [
   {
@@ -34,13 +35,16 @@ export const cartList = [
   },
 ];
 
-const totalPrice = cartList.reduce(
-    (total, item) => total + item.price * item.qty,
-    0
-  );
+
 
 
 const CartPopup = () => {
+    const totalPrice = cartList.reduce(
+    (total, item) => total + item.price * item.qty,
+    0
+  );
+    const {push}= useRouter();
+    const handlecheckout = () => {push("/checkout")}
     return (    
         <div className="absolute bg-white right-35 top-16 shadow-xl shadow-black/10 border border-gray-200 w-95 z-10">
             <div className="p-4 border-b border-gray-200 font-bold text-center">
@@ -74,7 +78,7 @@ const CartPopup = () => {
                     <div className="text-sm">Total</div>
                     <div className="text-primary text-xs">{priceFormatter(totalPrice)}</div>
                 </div> 
-                <Button variant="dark" size="small"className="w-full mt-4" >
+                <Button variant="dark" size="small"className="w-full mt-4" onClick={handlecheckout} >
                     Checkout Now <FiArrowRight/>
                 </Button>   
             </div>
