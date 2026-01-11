@@ -3,6 +3,7 @@ import { cartList } from "../ui/cart-popup";
 import Button from "../ui/button";
 import { FiArrowRight, FiCreditCard, FiTrash2 } from "react-icons/fi";
 import priceFormatter from "@/app/utils/price-formatter";
+import CardWithHeader from "../ui/card-with-header";
 
 const CartItems = () => {
     const totalPrice = cartList.reduce(
@@ -10,10 +11,8 @@ const CartItems = () => {
     0
   );
     return (
-        <div className="bg-white">
-        <div className="px-5 py-4 border-b border-gray-200">
-            <h2 className="font-bold text-lg ">Cart  Items</h2>
-        </div>
+        <CardWithHeader title="Cart Items">
+                    <div className="bg-white">
         <div className="overflow-auto max-h-[300px]">
             {cartList.map((item, index) => (
                         <div className="border-b border-gray-200 p-4 flex gap-3" key={index}>
@@ -49,6 +48,7 @@ const CartItems = () => {
                 </Button>   
             </div>
     </div>
+        </CardWithHeader>
     );
 }
 export default CartItems;
