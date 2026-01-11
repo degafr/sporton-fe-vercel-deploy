@@ -3,7 +3,7 @@ import Button from "./button";
 import { FiArrowRight, FiTrash2 } from "react-icons/fi";
 import priceFormatter from "@/app/utils/price-formatter";
 
-const cartList = [
+export const cartList = [
   {
     name: "Running Shirt",
     category: "Running",
@@ -24,6 +24,13 @@ const cartList = [
     price: 630000,
     qty:1,
     imgUrl: "product-3.png",
+  },
+  {
+    name: "SportsOn HyperSoccer v2",
+    category: "Football",
+    price: 458000,
+    qty:2,
+    imgUrl: "product-4.png",
   },
 ];
 
