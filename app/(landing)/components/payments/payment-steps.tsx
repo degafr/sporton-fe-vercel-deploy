@@ -5,7 +5,7 @@ import Button from "../ui/button";
 import { FiCheckCircle, FiCreditCard } from "react-icons/fi";
 import priceFormatter from "@/app/utils/price-formatter";
 import FileUpload from "../ui/file-upload";
-import { useRouter } from "next/navigation";
+import { useRouter } from "next/dist/client/components/navigation";
 import { useState } from "react";
 import { useCartStore } from "@/app/hooks/use-cart-store";
 import { transactionCheckout } from "@/app/services/transaction.service";
