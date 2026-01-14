@@ -10,13 +10,13 @@ const OrderSubmitted = () => {
   };
 
   return (
-    <div className="bg-white w-160 p-16 flex flex-col justify-center items-center mx-auto mb-15">
+    <div className="bg-white w-160 p-16 flex flex-col justify-center items-center mx-auto">
         <Image
             src="/images/icon-order-submitted.svg"
             width={117}
             height={117}
             alt="order submitted"
-            className="mb-4"
+            className="mb-2"
         />
         <h2 className="text-2xl font-semibold mb-2">Order Submitted !!</h2>
         <p className="text-center mb-8">
