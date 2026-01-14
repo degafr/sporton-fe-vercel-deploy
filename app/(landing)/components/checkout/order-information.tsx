@@ -2,7 +2,7 @@
 
 import { CustomerInfo } from "@/app/hooks/use-cart-store";
 import CardWithHeader from "../ui/card-with-header";
-import { useState } from "react";
+
 
 type TOrderInformation = {
   formData: CustomerInfo;
