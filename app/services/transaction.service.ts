@@ -5,7 +5,7 @@ export const transactionCheckout = async (
   form: FormData
 ): Promise<Transaction> => {
   return await fetchAPI<Transaction>("/transactions/checkout", {
-    method: "POST",
+    method: 'POST',
     body: form,
   });
 };
