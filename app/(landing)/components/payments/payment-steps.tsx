@@ -19,7 +19,7 @@ const PaymentSteps = () => {
     0
   );
 
-  const uploadAndConfirm = () => {push("/order-status/123")}      
+   
   const handleConfirmPayment = async () => {
     if (!file) {
       alert("Please upload your payment receipt!!!");
@@ -58,8 +58,8 @@ const PaymentSteps = () => {
           <div className="p-5">
           <ol className="list-decimal text-xs pl-2 flex flex-col gap-4 mb-5">
             <li>
-              Transfer the total amount of <b>Rp. 2.600.000</b> to your preferred
-              bank account listed under 'Payment Options' (BCA, Mandiri, or BRI).
+              Transfer the total amount of <b>{priceFormatter(totalPrice)}</b> to your preferred
+              bank account listed under 'Payment Options' (BCA, Mandiri, BRI, or BTPN).
             </li>
             <li>
               After completing the transfer, <b>keep the payment receipt</b> or a

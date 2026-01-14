@@ -34,6 +34,7 @@ const Checkout = () => {
          <div className="grid grid-cols-2 gap-14">      
             <OrderInformation formData={formData} setFormData={setFormData}/>
             <CartItems handlePayment={handlePayment} />
+            
          </div>
       </div>
     </main>
