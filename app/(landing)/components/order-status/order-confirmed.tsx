@@ -5,7 +5,7 @@ import Image from "next/image";
 
 const OrderConfirmed = () => {
   return (
-    <div className="bg-white w-160 p-16 flex flex-col justify-center items-center mx-auto">
+    <div className="bg-white w-160 p-16 flex flex-col justify-center items-center mx-auto mb-15">
       <Image
         src="/images/icon-order-confirmed.svg"
         width={117}
