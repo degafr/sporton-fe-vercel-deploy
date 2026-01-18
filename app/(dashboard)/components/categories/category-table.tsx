@@ -2,28 +2,18 @@ import priceFormatter from "@/app/utils/price-formatter";
 import Image from "next/image";
 import { FiEdit, FiEdit2, FiTrash2 } from "react-icons/fi";
 
-const productData = [
+const categoryData = [
   {
-    name: "SportOn Product 1",
-    imageUrl: "/images/products/product-1.png",
-    category: "Running",
-    price: 289000,
-    stock: 3,
+    name: "Running",
+    imageUrl: "/images/categories/category-running.png",
+    description: "lari"
   },
   {
-    name: "SportOn Product 2",
-    imageUrl: "/images/products/product-2.png",
-    category: "Running",
-    price: 229000,
-    stock: 5,
-  },
-  {
-    name: "SportOn Product 3",
-    imageUrl: "/images/products/product-3.png",
-    category: "Running",
-    price: 350000,
-    stock: 10,
-  },
+    name: "Football",
+    imageUrl: "/images/categories/category-football.png",
+    description: "bola",
+     
+},
 ];
 
 const CategoryTable = () => {
@@ -32,16 +22,14 @@ const CategoryTable = () => {
             <table className="w-full text-left border-collapse">
                 <thead>
                     <tr className="border-b border-gray-200">
-                        <th className=" py-6 px-4 font-semibold">Products</th>
-                        <th className=" py-6 px-4 font-semibold">Category</th>
-                        <th className=" py-6 px-4 font-semibold">Price</th>
-                        <th className=" py-6 px-4 font-semibold">Stock</th>
+                        <th className=" py-6 px-4 font-semibold">Category Name</th>
+                        <th className=" py-6 px-4 font-semibold">Description</th>
                         <th className=" py-6 px-4 font-semibold">Actions</th>
                     </tr>
                 </thead>
                 <tbody>
                     {
-                        productData.map((data, index) => (
+                        categoryData.map((data, index) => (
                             <tr key={index} className="border-b border-gray-200 last:border-b-0">
                                 <td className=" py-6 px-4 font-medium">
                                     <div className="flex gap-2 items-center">
@@ -52,15 +40,7 @@ const CategoryTable = () => {
                                     </div>
                                 </td>
                                 <td className=" px-6 py-4 font-medium">
-                                    <div className="rounded-md bg-gray-200 px-2 py-1 w-fit">
-                                        {data.category}
-                                    </div>
-                                </td>
-                                <td className=" px-6 py-4 font-medium">
-                                    {priceFormatter(data.price)}
-                                </td>
-                                <td className=" px-6 py-4 font-medium">
-                                    {data.stock} units
+                                    {data.description}
                                 </td>
                                 <td className="px-6 py-8 items-center flex gap-3 text-gray-600">
                                     <button> 
