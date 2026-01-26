@@ -3,6 +3,9 @@ import { Poppins } from "next/font/google";
 import "../globals.css";
 import Header from "../(landing)/components/layouts/header";
 import Sidebar from "./components/layouts/sidebar";
+import AuthGuard from "./components/layouts/auth-guard";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 
 const poppins = Poppins({
@@ -28,8 +31,11 @@ export default function RootLayout({
             <div className="fle min-h-screen bg-white">
             <Sidebar/> 
             <main className="flex-1 ml-80 p-14 bg-[#F7F9FA] min-h-screen">
-            <div className="max-w-6xl mx-auto">{children}</div>
-            </main>           
+            <div className="max-w-6xl mx-auto">
+              <AuthGuard>{children}</AuthGuard>
+            </div>
+            </main>
+            <ToastContainer position="bottom-right" />           
             </div>    
         </body>
     </html>
