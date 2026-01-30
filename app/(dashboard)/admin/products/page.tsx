@@ -8,6 +8,7 @@ import { useEffect, useState } from "react";
 import { Product } from "@/app/types";
 import { deleteProduct, getAllProducts } from "@/app/services/product.services";
 import { toast } from "react-toastify";
+import DeleteModal from "../../components/ui/delete-modal";
 
 const ProductManagement = () => {
     const [products, setProducts] = useState<Product[]>([]);
@@ -73,6 +74,7 @@ const ProductManagement = () => {
     </div>
     <ProductTable products={products} onEdit={handleEdit} onDelete={handleDelete}/>
     <ProductModal product={selectedProduct} onSuccess={fetchProducts} isOpen={isModalOpen} onClose={handleCloseModal}/>
+    <DeleteModal isOpen={isDeleteModalOpen} onClose={() => setIsDeleteModalOpen(false)} onConfirm={handleDeleteConfirm}/>
     </div>
     )
 }
